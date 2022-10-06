@@ -1,35 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/bac_base"
+    android:orientation="vertical"
     tools:context=".MainActivity">
-<!--
-    <TextView
-        android:id="@+id/quiz"
-        android:layout_marginTop="390dp"
-        android:layout_marginStart="95dp"
-        android:textSize="45sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Викторина"
-        android:textColor="@color/black" />
 
-    <TextView
-        android:id="@+id/result"
-        android:layout_marginTop="500dp"
-        android:layout_marginStart="88dp"
-        android:textSize="45sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Результаты"
-        android:textColor="@color/black" />
-        -->
-<!--
+    <!--
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -39,28 +19,36 @@
     </LinearLayout>
     -->
 
-    <androidx.appcompat.widget.AppCompatButton
+    <Button
         android:id="@+id/quiz"
-        android:layout_marginTop="390dp"
-        android:textSize="40sp"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="360dp"
+        android:layout_marginEnd="41dp"
+        android:background="@color/orange"
+        android:onClick="onClickStartQuiz"
+        android:text="@string/quiz"
         android:textColor="#582722"
-        android:fontFamyly="sans-serif-medium"
-        android:background="#C8986C"
-        android:alpha="0.5"
-        android:text="Викторина" />
+        android:textSize="40sp" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <Button
         android:id="@+id/result"
-        android:layout_marginTop="500dp"
-        android:textSize="40sp"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/quiz"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="41dp"
+        android:background="@color/orange"
+        android:text="@string/result"
         android:textColor="#582722"
-        android:fontFamyly="sans-serif-medium"
-        android:background="#C8986C"
-        android:text="Результаты" />
+        android:textSize="40sp" />
 
 
 </RelativeLayout>
