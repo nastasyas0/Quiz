@@ -18,35 +18,47 @@
             android:id="@+id/container2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:orientation="vertical">
+            android:layout_marginTop="245dp"
+            android:orientation="vertical"
+            android:padding="10dp">
 
             <LinearLayout
                 android:id="@+id/line2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="15dp"
                 android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/question"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:background="@drawable/style_btn_ques"/>
+                    android:layout_width="300dp"
+                    android:layout_height="76dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/style_btn_ques" />
+
                 <TextView
                     android:id="@+id/var1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:background="@drawable/style_btn_ques"/>
+                    android:layout_width="300dp"
+                    android:layout_height="62dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/style_btn_ques" />
+
                 <TextView
                     android:id="@+id/var2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:background="@drawable/style_btn_ques"/>
+                    android:layout_width="300dp"
+                    android:layout_height="62dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/style_btn_ques" />
+
                 <TextView
                     android:id="@+id/var3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:background="@drawable/style_btn_ques"/>
+                    android:layout_width="300dp"
+                    android:layout_height="62dp"
+                    android:layout_marginLeft="50dp"
+                    android:background="@drawable/style_btn_ques" />
             </LinearLayout>
 
             <LinearLayout
@@ -59,14 +71,15 @@
                     android:id="@+id/button_back"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="26dp"
+                    android:layout_marginRight="96dp"
                     android:background="@drawable/style_btn_ques"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="5dp"
                     android:paddingLeft="15dp"
+                    android:paddingTop="5dp"
                     android:paddingRight="15dp"
-                    android:layout_marginRight="120dp"
-                    android:textAllCaps="false"
+                    android:paddingBottom="5dp"
                     android:text="@string/back"
+                    android:textAllCaps="false"
                     android:textColor="@color/brown"
                     android:textSize="26sp" />
 
@@ -75,12 +88,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/style_btn_ques"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="5dp"
                     android:paddingLeft="20dp"
+                    android:paddingTop="5dp"
                     android:paddingRight="20dp"
-                    android:textAllCaps="false"
+                    android:paddingBottom="5dp"
                     android:text="@string/further"
+                    android:textAllCaps="false"
                     android:textColor="@color/brown"
                     android:textSize="26sp" />
             </LinearLayout>
