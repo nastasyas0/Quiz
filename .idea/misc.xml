@@ -3,7 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/app/Quiz/app/src/main/res/drawable/button_stroke_black_press_gray.xml" value="0.199" />
+        <entry key="..\:/app/Quiz/app/src/main/res/drawable/style_btn_stroke_black.xml" value="0.199" />
+        <entry key="..\:/app/Quiz/app/src/main/res/drawable/style_btn_stroke_black_press_gray.xml" value="0.199" />
+        <entry key="..\:/app/Quiz/app/src/main/res/drawable/style_main_btn.xml" value="0.199" />
         <entry key="..\:/app/Quiz/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/app/Quiz/app/src/main/res/layout/gamelevels.xml" value="0.4" />
         <entry key="..\:/app/Quiz/app/src/main/res/layout/questions.xml" value="0.264" />
       </map>
     </option>
