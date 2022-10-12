@@ -2,5 +2,8 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <stroke android:width="2dp" android:color="@color/orange40"/>
     <corners android:radius="23dp"/>
+<<<<<<< HEAD
     <solid android:color="@color/orange"/>
+=======
+>>>>>>> origin/style
 </shape>
