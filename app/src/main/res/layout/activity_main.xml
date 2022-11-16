@@ -9,46 +9,52 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <!--
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/startLayout"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/quiz"
-        android:orientation="horizontal">
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="340dp"
+        android:orientation="horizontal"
+        android:padding="1dp">
+
+        <Button
+            android:id="@+id/buttonStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/style_btn_stroke_black"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/quiz"
+            android:textColor="@color/brown"
+            android:textSize="40sp" />
 
     </LinearLayout>
-    -->
 
-    <Button
-        android:id="@+id/quiz"
+    <LinearLayout
+        android:id="@+id/resultLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="41dp"
-        android:layout_marginTop="360dp"
-        android:layout_marginEnd="41dp"
-        android:background="@color/orange"
-        android:onClick="onClickStartQuiz"
-        android:text="@string/quiz"
-        android:textColor="#582722"
-        android:textSize="40sp" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="480dp"
+        android:orientation="horizontal"
+        android:padding="1dp">
 
-    <Button
-        android:id="@+id/result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/quiz"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="41dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="41dp"
-        android:background="@color/orange"
-        android:text="@string/result"
-        android:textColor="#582722"
-        android:textSize="40sp" />
+        <Button
+            android:id="@+id/buttonResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/style_btn_stroke_black"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="@string/result"
+            android:textColor="@color/brown"
+            android:textSize="40sp" />
+    </LinearLayout>
 
 
 </RelativeLayout>
