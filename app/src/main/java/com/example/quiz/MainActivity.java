@@ -36,6 +36,21 @@ public class MainActivity extends AppCompatActivity {
 
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        // Кнопка для просмотра результатов - начало
+        Button buttonResult = (Button)findViewById(R.id.buttonResult);
+        buttonResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent intent = new Intent(MainActivity.this, Results.class);
+                    startActivity(intent);finish();
+                } catch(Exception e) {
+
+                }
+            }
+        });
+        // Кнопка для просмотра результатов - конец
     }
     // Системная кнопка "Назад" - начало
     // Выход из приложения по нажатию системной кнопки "Назад"

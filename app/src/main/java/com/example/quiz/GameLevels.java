@@ -49,6 +49,21 @@ public class GameLevels extends AppCompatActivity {
             }
         });
         // Кнопка для перехода на 1 уровень викторины - конец
+
+        // Кнопка для завершения викторины - начало
+        Button button_finish_game = (Button)findViewById(R.id.button_finish_game);
+        button_finish_game.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent intent = new Intent(GameLevels.this, Results.class);
+                    startActivity(intent);finish();
+                } catch(Exception e) {
+
+                }
+            }
+        });
+        // Кнопка для завершения викторины - конец
     }
     // Системная кнопка "Назад" - начало
     // Возвращение на главный экран по нажатию системной кнопки "Назад"
