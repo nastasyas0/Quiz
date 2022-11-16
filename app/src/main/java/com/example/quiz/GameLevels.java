@@ -2,7 +2,6 @@ package com.example.quiz;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.TextureView;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -12,7 +11,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class GameLevels extends AppCompatActivity {
-
+    int counter = 0;//общий счётчик правильных ответов
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,10 +29,11 @@ public class GameLevels extends AppCompatActivity {
                     Intent intent = new Intent(GameLevels.this, MainActivity.class);
                     startActivity(intent);finish();
                 }catch (Exception e) {
-
+                    //System.out.println("error");
                 }
             }
         });
+
 
         // Кнопка для перехода на 1 уровень викторины - начало
         TextView textView1 = (TextView)findViewById(R.id.textView1);
@@ -44,6 +44,7 @@ public class GameLevels extends AppCompatActivity {
                     String name = "rus_10.txt";//параметр для нового activity
                     Intent intent = new Intent(GameLevels.this, Level1.class);
                     intent.putExtra("name",name);//передаем нужный параметр
+                    intent.putExtra("counter",counter);//передаем нужный параметр
                     startActivity(intent);
                     finish();
                 } catch(Exception e) {
@@ -61,6 +62,7 @@ public class GameLevels extends AppCompatActivity {
                     String name = "rus_20.txt";//параметр для нового activity
                     Intent intent = new Intent(GameLevels.this, Level1.class);
                     intent.putExtra("name",name);//передаем нужный параметр
+                    intent.putExtra("counter",counter);//передаем нужный параметр
                     startActivity(intent);
                     finish();
                 } catch(Exception e) {
@@ -78,6 +80,7 @@ public class GameLevels extends AppCompatActivity {
                     String name = "rus_30.txt";//параметр для нового activity
                     Intent intent = new Intent(GameLevels.this, Level1.class);
                     intent.putExtra("name",name);//передаем нужный параметр
+                    intent.putExtra("counter",counter);//передаем нужный параметр
                     startActivity(intent);
                     finish();
                 } catch(Exception e) {
@@ -95,6 +98,7 @@ public class GameLevels extends AppCompatActivity {
                     String name = "rus_40.txt";//параметр для нового activity
                     Intent intent = new Intent(GameLevels.this, Level1.class);
                     intent.putExtra("name",name);//передаем нужный параметр
+                    intent.putExtra("counter",counter);//передаем нужный параметр
                     startActivity(intent);
                     finish();
                 } catch(Exception e) {
@@ -114,6 +118,7 @@ public class GameLevels extends AppCompatActivity {
                     String name = "math_10.txt";//параметр для нового activity
                     Intent intent = new Intent(GameLevels.this, Level1.class);
                     intent.putExtra("name",name);//передаем нужный параметр
+                    intent.putExtra("counter",counter);//передаем нужный параметр
                     startActivity(intent);
                     finish();
                 } catch(Exception e) {
@@ -132,6 +137,7 @@ public class GameLevels extends AppCompatActivity {
                     String name = "math_20.txt";//параметр для нового activity
                     Intent intent = new Intent(GameLevels.this, Level1.class);
                     intent.putExtra("name",name);//передаем нужный параметр
+                    intent.putExtra("counter",counter);//передаем нужный параметр
                     startActivity(intent);
                     finish();
                 } catch(Exception e) {
@@ -150,6 +156,7 @@ public class GameLevels extends AppCompatActivity {
                     String name = "math_30.txt";//параметр для нового activity
                     Intent intent = new Intent(GameLevels.this, Level1.class);
                     intent.putExtra("name",name);//передаем нужный параметр
+                    intent.putExtra("counter",counter);//передаем нужный параметр
                     startActivity(intent);
                     finish();
                 } catch(Exception e) {
@@ -168,6 +175,7 @@ public class GameLevels extends AppCompatActivity {
                     String name = "math_40.txt";//параметр для нового activity
                     Intent intent = new Intent(GameLevels.this, Level1.class);
                     intent.putExtra("name",name);//передаем нужный параметр
+                    intent.putExtra("counter",counter);//передаем нужный параметр
                     startActivity(intent);
                     finish();
                 } catch(Exception e) {
@@ -187,6 +195,7 @@ public class GameLevels extends AppCompatActivity {
                     String name = "inf_10.txt";//параметр для нового activity
                     Intent intent = new Intent(GameLevels.this, Level1.class);
                     intent.putExtra("name",name);//передаем нужный параметр
+                    intent.putExtra("counter",counter);//передаем нужный параметр
                     startActivity(intent);
                     finish();
                 } catch(Exception e) {
@@ -204,6 +213,7 @@ public class GameLevels extends AppCompatActivity {
                     String name = "inf_20.txt";//параметр для нового activity
                     Intent intent = new Intent(GameLevels.this, Level1.class);
                     intent.putExtra("name",name);//передаем нужный параметр
+                    intent.putExtra("counter",counter);//передаем нужный параметр
                     startActivity(intent);
                     finish();
                 } catch(Exception e) {
@@ -221,6 +231,7 @@ public class GameLevels extends AppCompatActivity {
                     String name = "inf_30.txt";//параметр для нового activity
                     Intent intent = new Intent(GameLevels.this, Level1.class);
                     intent.putExtra("name",name);//передаем нужный параметр
+                    intent.putExtra("counter",counter);//передаем нужный параметр
                     startActivity(intent);
                     finish();
                 } catch(Exception e) {
@@ -238,6 +249,7 @@ public class GameLevels extends AppCompatActivity {
                     String name = "inf_40.txt";//параметр для нового activity
                     Intent intent = new Intent(GameLevels.this, Level1.class);
                     intent.putExtra("name",name);//передаем нужный параметр
+                    intent.putExtra("counter",counter);//передаем нужный параметр
                     startActivity(intent);
                     finish();
                 } catch(Exception e) {
@@ -256,6 +268,7 @@ public class GameLevels extends AppCompatActivity {
                     String name = "eng_10.txt";//параметр для нового activity
                     Intent intent = new Intent(GameLevels.this, Level1.class);
                     intent.putExtra("name",name);//передаем нужный параметр
+                    intent.putExtra("counter",counter);//передаем нужный параметр
                     startActivity(intent);
                     finish();
                 } catch(Exception e) {
@@ -273,6 +286,7 @@ public class GameLevels extends AppCompatActivity {
                     String name = "eng_20.txt";//параметр для нового activity
                     Intent intent = new Intent(GameLevels.this, Level1.class);
                     intent.putExtra("name",name);//передаем нужный параметр
+                    intent.putExtra("counter",counter);//передаем нужный параметр
                     startActivity(intent);
                     finish();
                 } catch(Exception e) {
@@ -291,6 +305,7 @@ public class GameLevels extends AppCompatActivity {
                     String name = "eng_30.txt";//параметр для нового activity
                     Intent intent = new Intent(GameLevels.this, Level1.class);
                     intent.putExtra("name",name);//передаем нужный параметр
+                    intent.putExtra("counter",counter);//передаем нужный параметр
                     startActivity(intent);
                     finish();
                 } catch(Exception e) {
@@ -308,6 +323,7 @@ public class GameLevels extends AppCompatActivity {
                     String name = "eng_40.txt";//параметр для нового activity
                     Intent intent = new Intent(GameLevels.this, Level1.class);
                     intent.putExtra("name",name);//передаем нужный параметр
+                    intent.putExtra("counter",counter);//передаем нужный параметр
                     startActivity(intent);
                     finish();
                 } catch(Exception e) {
@@ -316,6 +332,11 @@ public class GameLevels extends AppCompatActivity {
             }
         });
         // Кнопка для перехода на 16 уровень викторины - конец
+        getCounter();
+    }
+    public void getCounter(){
+        Intent intent1 = getIntent();//переданный параметр из другой activity счётчик правильных ответов
+        counter = intent1.getIntExtra("counter",0);
     }
     // Системная кнопка "Назад" - начало
     // Возвращение на главный экран по нажатию системной кнопки "Назад"
