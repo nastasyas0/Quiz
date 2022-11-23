@@ -5,4 +5,86 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/back_results"
-    android:orientation="vertical"/>
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/container1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="222dp">
+
+        <LinearLayout
+            android:id="@+id/color_container"
+            android:layout_width="370dp"
+            android:layout_height="530dp"
+            android:background="@drawable/style_background_levels"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/container2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="12dp">
+
+                <TextView
+                    android:id="@+id/points"
+                    android:layout_width="320dp"
+                    android:layout_height="90dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/style_btn_stroke_black"
+                    android:gravity="center"
+                    android:textColor="@color/brown"
+                    android:textSize="46sp"
+                    android:layout_marginBottom="20dp"/>
+
+                <ScrollView
+                    android:id="@+id/ScrollView_Vems"
+                    android:layout_width="320dp"
+                    android:layout_height="320dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/style_btn_ques"
+                    android:fillViewport="true">
+
+                    <LinearLayout
+                        android:id="@+id/container_mems"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/mems"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:textColor="@color/brown"
+                            android:textSize="22sp" />
+                    </LinearLayout>
+                </ScrollView>
+
+                <Button
+                    android:id="@+id/button_close"
+                    android:layout_width="260dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/style_btn_stroke_black"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="5dp"
+                    android:text="@string/close"
+                    android:textAllCaps="false"
+                    android:textColor="@color/brown"
+                    android:textSize="33sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>
+

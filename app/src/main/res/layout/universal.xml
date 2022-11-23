@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back_ques"
+    android:background="@drawable/back_q"
     android:orientation="vertical">
 
     <LinearLayout
@@ -12,90 +12,124 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingTop="188dp">
 
         <LinearLayout
-            android:id="@+id/container2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="150dp"
-            android:orientation="vertical"
-            android:padding="10dp">
+            android:id="@+id/color_container"
+            android:layout_width="370dp"
+            android:layout_height="610dp"
+            android:background="@drawable/style_background_levels"
+            android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/line2"
+                android:id="@+id/container2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/subject"
-                    android:layout_width="240dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/style_btn_stroke_black" />
-
-                <TextView
-                    android:id="@+id/points"
-                    android:layout_width="170dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="20dp"
-                    android:background="@drawable/style_btn_ques" />
-
-                <TextView
-                    android:id="@+id/question"
-                    android:layout_width="300dp"
-                    android:layout_height="76dp"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="20dp"
-                    android:background="@drawable/style_btn_ques" />
-
-                <TextView
-                    android:id="@+id/var1"
-                    android:layout_width="300dp"
-                    android:layout_height="62dp"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/style_btn_ques" />
-
-                <TextView
-                    android:id="@+id/var2"
-                    android:layout_width="300dp"
-                    android:layout_height="62dp"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/style_btn_ques" />
-
-                <TextView
-                    android:id="@+id/var3"
-                    android:layout_width="300dp"
-                    android:layout_height="62dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/style_btn_ques" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/line1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:orientation="horizontal">
+                android:orientation="vertical"
+                android:padding="10dp">
 
                 <LinearLayout
-                    android:id="@+id/container3"
+                    android:id="@+id/line2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/subject"
+                        android:layout_width="240dp"
+                        android:layout_height="56dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/style_btn_stroke_black"
+                        android:gravity="center"
+                        android:textColor="@color/brown"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/points"
+                        android:layout_width="170dp"
+                        android:layout_height="46dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="24dp"
+                        android:background="@drawable/style_btn_ques"
+                        android:gravity="center"
+                        android:textColor="@color/brown"
+                        android:textSize="22sp" />
+
+                    <ScrollView
+                        android:id="@+id/ScrollView_Question"
+                        android:layout_width="320dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/style_btn_ques"
+                        android:fillViewport="true">
+
+                        <LinearLayout
+                            android:id="@+id/container_quest"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/question"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:textColor="@color/brown"
+                                android:textSize="22sp" />
+                        </LinearLayout>
+                    </ScrollView>
+
+                    <TextView
+                        android:id="@+id/var1"
+                        android:layout_width="320dp"
+                        android:layout_height="66dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/style_btn_ques"
+                        android:gravity="center"
+                        android:textColor="@color/brown"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/var2"
+                        android:layout_width="320dp"
+                        android:layout_height="66dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/style_btn_ques"
+                        android:gravity="center"
+                        android:textColor="@color/brown"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/var3"
+                        android:layout_width="320dp"
+                        android:layout_height="66dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/style_btn_ques"
+                        android:gravity="center"
+                        android:textColor="@color/brown"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/line1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
-                    android:orientation="horizontal"
-                    android:paddingLeft="32dp">
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
                     <Button
                         android:id="@+id/button_back"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="86dp"
                         android:background="@drawable/style_btn_ques"
                         android:paddingLeft="15dp"
                         android:paddingTop="5dp"
@@ -104,25 +138,13 @@
                         android:text="@string/back"
                         android:textAllCaps="false"
                         android:textColor="@color/brown"
-                        android:textSize="26sp" />
+                        android:textSize="30sp" />
 
-                    <Button
-                        android:id="@+id/button_further"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/style_btn_ques"
-                        android:paddingLeft="20dp"
-                        android:paddingTop="5dp"
-                        android:paddingRight="20dp"
-                        android:paddingBottom="5dp"
-                        android:text="@string/further"
-                        android:textAllCaps="false"
-                        android:textColor="@color/brown"
-                        android:textSize="26sp" />
                 </LinearLayout>
 
             </LinearLayout>
 
         </LinearLayout>
+
     </LinearLayout>
 </RelativeLayout>

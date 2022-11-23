@@ -448,7 +448,7 @@ public class GameLevels extends AppCompatActivity {
     // Системная кнопка "Назад" - конец
 
     public void getMessage(){
-        backToast = Toast.makeText(getBaseContext(), "Ставки сделаны, ставок больше нет.", Toast.LENGTH_SHORT);
+        backToast = Toast.makeText(getBaseContext(), "Ставки сделаны, ставок больше нет", Toast.LENGTH_SHORT);
         backToast.show();
         backPressedTime = System.currentTimeMillis();
     }
