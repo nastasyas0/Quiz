@@ -26,10 +26,16 @@ import java.util.Objects;
 public class Level1 extends AppCompatActivity {
     private TextView questionField, answ1, answ2, answ3, subj, p;//поле для вопроса
     private String a1 = "",a2="", a3="", answer="";//поля для сравнения ответа
+    int counter;boolean[]b;String new_name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.universal);
+
+        Intent intent = getIntent();//переданный параметр из другой activity
+        counter = intent.getIntExtra("counter",0);//полученные данные счётчика
+        new_name = intent.getStringExtra("name");//полученные данные имени файла
+        b = intent.getBooleanArrayExtra("b");//массив для управления ограничением кнопок
 
         //Развернуть игру на весь экран - начало
         Window w = getWindow();
@@ -44,6 +50,9 @@ public class Level1 extends AppCompatActivity {
                 // Команда для кнопки "Назад"
                 try{
                     Intent intent = new Intent(Level1.this, GameLevels.class);
+                    intent.putExtra("counter",counter);//передаём счётчик дальше
+                    intent.putExtra("new_name",new_name);//передаём имя файла дальше
+                    intent.putExtra("b",b);//передаём массив для управления кнопками дальше
                     startActivity(intent);finish();
                 }catch (Exception e) {
 
@@ -69,10 +78,10 @@ public class Level1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = getIntent();//переданный параметр из другой activity счётчик
-                    int counter = intent.getIntExtra("counter",0);//полученные данные счётчика
-                    String new_name = intent.getStringExtra("name");//полученные данные имени файла
-                    boolean[] b = intent.getBooleanArrayExtra("b");//массив для управления ограничением кнопок
+//                    Intent intent = getIntent();//переданный параметр из другой activity
+//                    int counter = intent.getIntExtra("counter",0);//полученные данные счётчика
+//                    String new_name = intent.getStringExtra("name");//полученные данные имени файла
+//                    boolean[] b = intent.getBooleanArrayExtra("b");//массив для управления ограничением кнопок
                     b[checkButtonNumber(new_name)]=false;//закрытие доступа к кнопке
                     System.out.println(checkButtonNumber(new_name));
                     //является ли ответ правильным?
@@ -106,10 +115,10 @@ public class Level1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = getIntent();//переданный параметр из другой activity
-                    int counter = intent.getIntExtra("counter",0);//полученные данные
-                    String new_name = intent.getStringExtra("name");//полученные данные
-                    boolean[] b = intent.getBooleanArrayExtra("b");//массив для управления ограничением кнопок
+//                    Intent intent = getIntent();//переданный параметр из другой activity
+//                    int counter = intent.getIntExtra("counter",0);//полученные данные
+//                    String new_name = intent.getStringExtra("name");//полученные данные
+//                    boolean[] b = intent.getBooleanArrayExtra("b");//массив для управления ограничением кнопок
                     b[checkButtonNumber(new_name)]=false;//закрытие доступа к кнопке
                     if(Objects.equals(answer, a2)){
                         counter=counter+getPoints(new_name);
@@ -141,10 +150,10 @@ public class Level1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = getIntent();//переданный параметр из другой activity счётчик
-                    int counter = intent.getIntExtra("counter",0);//полученные данные
-                    String new_name = intent.getStringExtra("name");//полученные данные
-                    boolean[] b = intent.getBooleanArrayExtra("b");//массив для управления ограничением кнопок
+//                    Intent intent = getIntent();//переданный параметр из другой activity счётчик
+//                    int counter = intent.getIntExtra("counter",0);//полученные данные
+//                    String new_name = intent.getStringExtra("name");//полученные данные
+//                    boolean[] b = intent.getBooleanArrayExtra("b");//массив для управления ограничением кнопок
                     b[checkButtonNumber(new_name)]=false;//закрытие доступа к кнопке
                     if(Objects.equals(answer, a3)){
                         counter=counter+getPoints(new_name);
@@ -199,6 +208,9 @@ public class Level1 extends AppCompatActivity {
     public void onBackPressed() {
         try {
             Intent intent = new Intent(Level1.this, GameLevels.class);
+            intent.putExtra("counter",counter);//передаём счётчик дальше
+            intent.putExtra("new_name",new_name);//передаём имя файла дальше
+            intent.putExtra("b",b);//передаём массив для управления кнопками дальше
             startActivity(intent);
             finish();
         } catch (Exception e) {
