@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 try {
                     Intent intent = new Intent(MainActivity.this, Results.class);
+                    intent.putExtra("nameOfFileResult","result.txt");
                     startActivity(intent);finish();
                 } catch(Exception e) {
 

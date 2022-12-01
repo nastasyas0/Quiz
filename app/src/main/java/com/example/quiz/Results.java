@@ -75,8 +75,22 @@ public class Results extends AppCompatActivity {
     public void printCounter(String name) throws IOException {
         Intent intent = getIntent();//переданный параметр из другой activity счётчик правильных ответов
         int counter = intent.getIntExtra("counter",0);
-        String s = "Баллы:" + Integer.toString(counter);
-        points.setText(s);//вывод количества заработанных баллов
+        String nameOfFile = intent.getStringExtra("nameOfFileResult");
+        if(nameOfFile==null){
+            String s = "Баллы:" + Integer.toString(counter);
+            points.setText(s);//вывод количества заработанных баллов
+            FileOutputStream f = openFileOutput("result.txt", MODE_PRIVATE);//заполнение файла
+            f.write(s.getBytes());
+        }
+        else{
+            FileInputStream fileInput0 = openFileInput(nameOfFile);//с каким файлом работаем
+            InputStreamReader reader = new InputStreamReader(fileInput0);//считали данные
+            BufferedReader bufferedReader = new BufferedReader(reader);//преобразовали в нужный вид
+            String p="";
+            p=bufferedReader.readLine();
+            points.setText(p);
+        }
+
         //приготовление к выводу анекдота
         FileInputStream fileInput = openFileInput(name);//с каким файлом работаем
         InputStreamReader reader = new InputStreamReader(fileInput);//считали данные

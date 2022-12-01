@@ -17,8 +17,6 @@ import java.lang.reflect.Array;
 public class GameLevels extends AppCompatActivity {
     int counter = 0;//общий счётчик правильных ответов
 
-    private boolean b1=true,b2=true,b3=true,b4=true,b5=true,b6=true,b7=true,b8=true,b9=true,b10=true,b11=true,b12=true,b13=true,b14=true,b15=true,b16=true;
-    //для сообщения
     private long backPressedTime;
     private Toast backToast;
 
@@ -433,27 +431,7 @@ public class GameLevels extends AppCompatActivity {
         Intent intent1 = getIntent();//переданный параметр из другой activity счётчик правильных ответов
         counter = intent1.getIntExtra("counter",0);
         String new_name = intent1.getStringExtra("new_name");
-        if(new_name!=null){
-            switch (new_name){
-                case "rus_10.txt":  b1=false;break;
-                case "rus_20.txt":  b2=false;break;
-                case "rus_30.txt":  b3=false;break;
-                case "rus_40.txt":  b4=false;break;
-                case "math_10.txt":  b5=false;break;
-                case "math_20.txt":  b6=false;break;
-                case "math_30.txt":  b7=false;break;
-                case "math_40.txt":  b8=false;break;
-                case "inf_10.txt":  b9=false;break;
-                case "inf_20.txt":  b10=false;break;
-                case "inf_30.txt":  b11=false;break;
-                case "inf_40.txt":  b12=false;break;
-                case "eng_10.txt":  b13=false;break;
-                case "eng_20.txt":  b14=false;break;
-                case "eng_30.txt":  b15=false;break;
-                case "eng_40.txt":  b16=false;break;
-            }
         }
-    }
 
     // Системная кнопка "Назад" - начало
     // Возвращение на главный экран по нажатию системной кнопки "Назад"
