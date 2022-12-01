@@ -1,6 +1,10 @@
 package com.example.quiz;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.TextureView;
 import android.view.View;
@@ -11,15 +15,19 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
 
 import java.lang.reflect.Array;
 
 public class GameLevels extends AppCompatActivity {
     int counter = 0;//общий счётчик правильных ответов
+    private TextView[] t = new TextView[16];
 
     private long backPressedTime;
     private Toast backToast;
 
+    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +53,31 @@ public class GameLevels extends AppCompatActivity {
 
         Intent intent0 = getIntent();//переданный параметр из другой activity
         boolean[] b = intent0.getBooleanArrayExtra("b");//массив для управления ограничением кнопок
+
+        t[0] = findViewById(R.id.textView1);
+        t[1] = findViewById(R.id.textView2);
+        t[2] = findViewById(R.id.textView3);
+        t[3] = findViewById(R.id.textView4);
+        t[4] = findViewById(R.id.textView5);
+        t[5] = findViewById(R.id.textView6);
+        t[6] = findViewById(R.id.textView7);
+        t[7] = findViewById(R.id.textView8);
+        t[8] = findViewById(R.id.textView9);
+        t[9] = findViewById(R.id.textView10);
+        t[10] = findViewById(R.id.textView11);
+        t[11] = findViewById(R.id.textView12);
+        t[12] = findViewById(R.id.textView13);
+        t[13] = findViewById(R.id.textView14);
+        t[14] = findViewById(R.id.textView15);
+        t[15] = findViewById(R.id.textView16);
+
+        for(int i = 0;i < 16; i++){
+            Resources res = getResources();
+            if(!b[i]){
+                t[i].setBackground(ResourcesCompat.getDrawable(res, R.drawable.style_btn_stroke_black_press_gray, null));
+                t[i].setTextColor(R.color.brown_text_gray);
+            }
+        }
 
         // Кнопка для перехода на 1 уровень викторины - начало
         TextView textView1 = (TextView)findViewById(R.id.textView1);
