@@ -25,7 +25,7 @@ import java.util.Objects;
 
 public class Level1 extends AppCompatActivity {
     private TextView questionField, answ1, answ2, answ3, subj, p;//поле для вопроса
-    private String a1 = "",a2="", a3="", answer="";
+    private String a1 = "",a2="", a3="", answer="";//поля для сравнения ответа
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,23 +70,23 @@ public class Level1 extends AppCompatActivity {
             public void onClick(View v) {
                 try {
                     Intent intent = getIntent();//переданный параметр из другой activity счётчик
-                    int counter = intent.getIntExtra("counter",0);//полученные данные
-                    String new_name = intent.getStringExtra("name");//полученные данные
-
+                    int counter = intent.getIntExtra("counter",0);//полученные данные счётчика
+                    String new_name = intent.getStringExtra("name");//полученные данные имени файла
+                    //является ли ответ правильным?
                     if(Objects.equals(answer, a1)){
                         answ1.setText("right");
-                        counter=counter+1;
+                        counter=counter+getPoints(new_name);//увеличение баллов на нужную величину
                         Intent intent2 = new Intent(Level1.this, GameLevels.class);
-                        intent2.putExtra("counter",counter);//передаем нужный параметр
-                        intent2.putExtra("new_name",new_name);
+                        intent2.putExtra("counter",counter);//передаем счётчик дальше
+                        intent2.putExtra("new_name",new_name);//передаём имя файла дальше
                         startActivity(intent2);
                         finish();
                     }
                     else{
                         answ1.setText("false");
                         Intent intent2 = new Intent(Level1.this, GameLevels.class);
-                        intent2.putExtra("counter",counter);//передаем нужный параметр
-                        intent2.putExtra("new_name",new_name);
+                        intent2.putExtra("counter",counter);//передаем счётчик дальше
+                        intent2.putExtra("new_name",new_name);//передаём имя файла дальше
                         startActivity(intent2);
                         finish();
                     }
@@ -105,7 +105,7 @@ public class Level1 extends AppCompatActivity {
                     int counter = intent.getIntExtra("counter",0);//полученные данные
                     String new_name = intent.getStringExtra("name");//полученные данные
                     if(Objects.equals(answer, a2)){
-                        counter=counter+1;
+                        counter=counter+getPoints(new_name);
                         answ2.setText("right");
                         Intent intent2 = new Intent(Level1.this, GameLevels.class);
                         intent2.putExtra("counter",counter);//передаем нужный параметр
@@ -136,7 +136,7 @@ public class Level1 extends AppCompatActivity {
                     int counter = intent.getIntExtra("counter",0);//полученные данные
                     String new_name = intent.getStringExtra("name");//полученные данные
                     if(Objects.equals(answer, a3)){
-                        counter=counter+1;
+                        counter=counter+getPoints(new_name);
                         answ3.setText("right");
                         Intent intent2 = new Intent(Level1.this, GameLevels.class);
                         intent2.putExtra("counter",counter);//передаем нужный параметр
@@ -195,7 +195,17 @@ public class Level1 extends AppCompatActivity {
             case "eng_40.txt":  inputInFileE4(name);break;
         }
     }
-
+    //функция для получения числа баллов за вопрос
+    public int getPoints(String name){
+        int n=0;
+        switch (name.substring(0, 3)){
+            case "mat": n = new Integer(name.substring(5,7));break;
+            case "rus":
+            case "inf":
+            case "eng": n = new Integer(name.substring(4,6));break;
+        }
+        return n;
+    }
     //берём вопрос из файла
     public void getQuestionFromFile(){
         ///data/data/com.example.quiz/files/eng_10.txt

@@ -16,6 +16,8 @@ import java.lang.reflect.Array;
 
 public class GameLevels extends AppCompatActivity {
     int counter = 0;//общий счётчик правильных ответов
+    private boolean[] b= new boolean[16];
+
     private boolean b1=true,b2=true,b3=true,b4=true,b5=true,b6=true,b7=true,b8=true,b9=true,b10=true,b11=true,b12=true,b13=true,b14=true,b15=true,b16=true;
     //для сообщения
     private long backPressedTime;
@@ -43,6 +45,10 @@ public class GameLevels extends AppCompatActivity {
                 }
             }
         });
+        //инициализация массива дя кнопок
+        for (int i=0; i<16; i++){
+            b[i]=true;
+        }
 
         // Кнопка для перехода на 1 уровень викторины - начало
         TextView textView1 = (TextView)findViewById(R.id.textView1);
@@ -398,6 +404,7 @@ public class GameLevels extends AppCompatActivity {
             public void onClick(View v) {
                 try {
                     Intent intent = new Intent(GameLevels.this, Results.class);
+                    intent.putExtra("counter",counter);
                     startActivity(intent);finish();
                 } catch(Exception e) {
 
