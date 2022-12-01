@@ -17,5 +17,6 @@
     <color name="brown">#582722</color>
     <color name="brown_gray">#CAB6A4</color>
     <color name="brown_text_gray">#736564</color>
+    <color name="brown_text_gray70">#70736564</color>
 
 </resources>

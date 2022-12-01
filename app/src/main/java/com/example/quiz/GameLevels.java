@@ -36,7 +36,6 @@ public class GameLevels extends AppCompatActivity {
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-
         Button button_back = (Button)findViewById(R.id.button_back);
         button_back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +70,7 @@ public class GameLevels extends AppCompatActivity {
         t[14] = findViewById(R.id.textView15);
         t[15] = findViewById(R.id.textView16);
 
+        // Меняем цвет кнопки после ответа на вопрос
         for(int i = 0;i < 16; i++){
             Resources res = getResources();
             if(!b[i]){
@@ -100,8 +100,8 @@ public class GameLevels extends AppCompatActivity {
                 }
             }
         });
+        // Кнопка для перехода на 1 уровень викторины - конец
 
-        // Кнопка для перехода на 2 уровень викторины - конец
         // Кнопка для перехода на 2 уровень викторины - начало
         TextView textView2 = (TextView)findViewById(R.id.textView2);
         textView2.setOnClickListener(new View.OnClickListener() {
@@ -124,6 +124,7 @@ public class GameLevels extends AppCompatActivity {
             }
         });
         // Кнопка для перехода на 2 уровень викторины - конец
+
         // Кнопка для перехода на 3 уровень викторины - начало
         TextView textView3 = (TextView)findViewById(R.id.textView3);
         textView3.setOnClickListener(new View.OnClickListener() {
@@ -146,6 +147,7 @@ public class GameLevels extends AppCompatActivity {
             }
         });
         // Кнопка для перехода на 3 уровень викторины - конец
+
         // Кнопка для перехода на 4 уровень викторины - начало
         TextView textView4 = (TextView)findViewById(R.id.textView4);
         textView4.setOnClickListener(new View.OnClickListener() {
@@ -169,7 +171,7 @@ public class GameLevels extends AppCompatActivity {
         });
         // Кнопка для перехода на 4 уровень викторины - конец
 
-        //новый предмет математика
+        // новый предмет математика
         // Кнопка для перехода на 5 уровень викторины - начало
         TextView textView5 = (TextView)findViewById(R.id.textView5);
         textView5.setOnClickListener(new View.OnClickListener() {
@@ -261,8 +263,8 @@ public class GameLevels extends AppCompatActivity {
             }
         });
         // Кнопка для перехода на 8 уровень викторины - конец
-        //новый предмет информатика
 
+        //новый предмет информатика
         // Кнопка для перехода на 9 уровень викторины - начало
         TextView textView9 = (TextView)findViewById(R.id.textView9);
         textView9.setOnClickListener(new View.OnClickListener() {
@@ -285,6 +287,7 @@ public class GameLevels extends AppCompatActivity {
             }
         });
         // Кнопка для перехода на 9 уровень викторины - конец
+
         // Кнопка для перехода на 10 уровень викторины - начало
         TextView textView10 = (TextView)findViewById(R.id.textView10);
         textView10.setOnClickListener(new View.OnClickListener() {
@@ -307,6 +310,7 @@ public class GameLevels extends AppCompatActivity {
             }
         });
         // Кнопка для перехода на 10 уровень викторины - конец
+
         // Кнопка для перехода на 11 уровень викторины - начало
         TextView textView11 = (TextView)findViewById(R.id.textView11);
         textView11.setOnClickListener(new View.OnClickListener() {
@@ -329,6 +333,7 @@ public class GameLevels extends AppCompatActivity {
             }
         });
         // Кнопка для перехода на 11 уровень викторины - конец
+
         // Кнопка для перехода на 12 уровень викторины - начало
         TextView textView12 = (TextView)findViewById(R.id.textView12);
         textView12.setOnClickListener(new View.OnClickListener() {
@@ -351,7 +356,8 @@ public class GameLevels extends AppCompatActivity {
             }
         });
         // Кнопка для перехода на 12 уровень викторины - конец
-        //новый предмет английский
+
+        // новый предмет английский
         // Кнопка для перехода на 13 уровень викторины - начало
         TextView textView13 = (TextView)findViewById(R.id.textView13);
         textView13.setOnClickListener(new View.OnClickListener() {
@@ -374,6 +380,7 @@ public class GameLevels extends AppCompatActivity {
             }
         });
         // Кнопка для перехода на 13 уровень викторины - конец
+
         // Кнопка для перехода на 14 уровень викторины - начало
         TextView textView14 = (TextView)findViewById(R.id.textView14);
         textView14.setOnClickListener(new View.OnClickListener() {
@@ -419,6 +426,7 @@ public class GameLevels extends AppCompatActivity {
             }
         });
         // Кнопка для перехода на 15 уровень викторины - конец
+
         // Кнопка для перехода на 16 уровень викторины - начало
         TextView textView16 = (TextView)findViewById(R.id.textView16);
         textView16.setOnClickListener(new View.OnClickListener() {
@@ -457,14 +465,14 @@ public class GameLevels extends AppCompatActivity {
             }
         });
         // Кнопка для завершения викторины - конец
-
         getCounter();
     }
+
     public void getCounter(){
         Intent intent1 = getIntent();//переданный параметр из другой activity счётчик правильных ответов
         counter = intent1.getIntExtra("counter",0);
         String new_name = intent1.getStringExtra("new_name");
-        }
+    }
 
     // Системная кнопка "Назад" - начало
     // Возвращение на главный экран по нажатию системной кнопки "Назад"

@@ -61,7 +61,6 @@ public class Level1 extends AppCompatActivity {
             }
         });
 
-
         //работа с файлом
         questionField = findViewById(R.id.question);//поле для вопроса
         answ1 = findViewById(R.id.var1);//поле для ответа 1
@@ -72,7 +71,6 @@ public class Level1 extends AppCompatActivity {
 
         putQuestionInFile();//запись в файл
         getQuestionFromFile();//вывод из файла
-
 
         // Кнопка выбора ответа 1
         answ1.setOnClickListener(new View.OnClickListener() {
@@ -241,6 +239,7 @@ public class Level1 extends AppCompatActivity {
             case "eng_40.txt":  inputInFileE4(name);break;
         }
     }
+
     //функция для получения числа баллов за вопрос
     public int getPoints(String name){
         int n=0;
@@ -252,6 +251,7 @@ public class Level1 extends AppCompatActivity {
         }
         return n;
     }
+
     //берём вопрос из файла
     public void getQuestionFromFile(){
         ///data/data/com.example.quiz/files/eng_10.txt
@@ -297,6 +297,7 @@ public class Level1 extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
     private void inputInFileR1(String name){
         try {
             FileOutputStream f = openFileOutput(name, MODE_PRIVATE);//заполнение файла
