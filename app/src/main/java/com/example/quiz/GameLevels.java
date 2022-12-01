@@ -16,7 +16,6 @@ import java.lang.reflect.Array;
 
 public class GameLevels extends AppCompatActivity {
     int counter = 0;//общий счётчик правильных ответов
-    private boolean[] b= new boolean[16];
 
     private boolean b1=true,b2=true,b3=true,b4=true,b5=true,b6=true,b7=true,b8=true,b9=true,b10=true,b11=true,b12=true,b13=true,b14=true,b15=true,b16=true;
     //для сообщения
@@ -45,10 +44,9 @@ public class GameLevels extends AppCompatActivity {
                 }
             }
         });
-        //инициализация массива дя кнопок
-        for (int i=0; i<16; i++){
-            b[i]=true;
-        }
+
+        Intent intent0 = getIntent();//переданный параметр из другой activity
+        boolean[] b = intent0.getBooleanArrayExtra("b");//массив для управления ограничением кнопок
 
         // Кнопка для перехода на 1 уровень викторины - начало
         TextView textView1 = (TextView)findViewById(R.id.textView1);
@@ -56,11 +54,12 @@ public class GameLevels extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    if(b1){
+                    if(b[0]){
                         String name = "rus_10.txt";//параметр для нового activity
                         Intent intent = new Intent(GameLevels.this, Level1.class);
                         intent.putExtra("name",name);//передаем нужный параметр
                         intent.putExtra("counter",counter);//передаем нужный параметр
+                        intent.putExtra("b",b);
                         startActivity(intent);
                         finish();
                     }
@@ -78,11 +77,12 @@ public class GameLevels extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    if(b2){
+                    if(b[1]){
                         String name = "rus_20.txt";//параметр для нового activity
                         Intent intent = new Intent(GameLevels.this, Level1.class);
                         intent.putExtra("name",name);//передаем нужный параметр
                         intent.putExtra("counter",counter);//передаем нужный параметр
+                        intent.putExtra("b",b);
                         startActivity(intent);
                         finish();
                     }
@@ -99,11 +99,12 @@ public class GameLevels extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    if(b3){
+                    if(b[2]){
                         String name = "rus_30.txt";//параметр для нового activity
                         Intent intent = new Intent(GameLevels.this, Level1.class);
                         intent.putExtra("name",name);//передаем нужный параметр
                         intent.putExtra("counter",counter);//передаем нужный параметр
+                        intent.putExtra("b",b);
                         startActivity(intent);
                         finish();
                     }
@@ -120,11 +121,12 @@ public class GameLevels extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    if(b4){
+                    if(b[3]){
                         String name = "rus_40.txt";//параметр для нового activity
                         Intent intent = new Intent(GameLevels.this, Level1.class);
                         intent.putExtra("name",name);//передаем нужный параметр
                         intent.putExtra("counter",counter);//передаем нужный параметр
+                        intent.putExtra("b",b);
                         startActivity(intent);
                         finish();
                     }
@@ -143,11 +145,12 @@ public class GameLevels extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    if(b5){
+                    if(b[4]){
                         String name = "math_10.txt";//параметр для нового activity
                         Intent intent = new Intent(GameLevels.this, Level1.class);
                         intent.putExtra("name",name);//передаем нужный параметр
                         intent.putExtra("counter",counter);//передаем нужный параметр
+                        intent.putExtra("b",b);
                         startActivity(intent);
                         finish();
                     }
@@ -165,11 +168,12 @@ public class GameLevels extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    if(b6){
+                    if(b[5]){
                         String name = "math_20.txt";//параметр для нового activity
                         Intent intent = new Intent(GameLevels.this, Level1.class);
                         intent.putExtra("name",name);//передаем нужный параметр
                         intent.putExtra("counter",counter);//передаем нужный параметр
+                        intent.putExtra("b",b);
                         startActivity(intent);
                         finish();
                     }
@@ -187,11 +191,12 @@ public class GameLevels extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    if(b7){
+                    if(b[6]){
                         String name = "math_30.txt";//параметр для нового activity
                         Intent intent = new Intent(GameLevels.this, Level1.class);
                         intent.putExtra("name",name);//передаем нужный параметр
                         intent.putExtra("counter",counter);//передаем нужный параметр
+                        intent.putExtra("b",b);
                         startActivity(intent);
                         finish();
                     }
@@ -209,11 +214,12 @@ public class GameLevels extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    if (b8) {
+                    if (b[7]) {
                         String name = "math_40.txt";//параметр для нового activity
                         Intent intent = new Intent(GameLevels.this, Level1.class);
                         intent.putExtra("name",name);//передаем нужный параметр
                         intent.putExtra("counter",counter);//передаем нужный параметр
+                        intent.putExtra("b",b);
                         startActivity(intent);
                         finish();
                     }
@@ -232,11 +238,12 @@ public class GameLevels extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    if(b9){
+                    if(b[8]){
                         String name = "inf_10.txt";//параметр для нового activity
                         Intent intent = new Intent(GameLevels.this, Level1.class);
                         intent.putExtra("name",name);//передаем нужный параметр
                         intent.putExtra("counter",counter);//передаем нужный параметр
+                        intent.putExtra("b",b);
                         startActivity(intent);
                         finish();
                     }
@@ -253,11 +260,12 @@ public class GameLevels extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    if(b10){
+                    if(b[9]){
                         String name = "inf_20.txt";//параметр для нового activity
                         Intent intent = new Intent(GameLevels.this, Level1.class);
                         intent.putExtra("name",name);//передаем нужный параметр
                         intent.putExtra("counter",counter);//передаем нужный параметр
+                        intent.putExtra("b",b);
                         startActivity(intent);
                         finish();
                     }
@@ -274,11 +282,12 @@ public class GameLevels extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    if(b11){
+                    if(b[10]){
                         String name = "inf_30.txt";//параметр для нового activity
                         Intent intent = new Intent(GameLevels.this, Level1.class);
                         intent.putExtra("name",name);//передаем нужный параметр
                         intent.putExtra("counter",counter);//передаем нужный параметр
+                        intent.putExtra("b",b);
                         startActivity(intent);
                         finish();
                     }
@@ -295,11 +304,12 @@ public class GameLevels extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    if(b12){
+                    if(b[11]){
                         String name = "inf_40.txt";//параметр для нового activity
                         Intent intent = new Intent(GameLevels.this, Level1.class);
                         intent.putExtra("name",name);//передаем нужный параметр
                         intent.putExtra("counter",counter);//передаем нужный параметр
+                        intent.putExtra("b",b);
                         startActivity(intent);
                         finish();
                     }
@@ -317,11 +327,12 @@ public class GameLevels extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    if(b13){
+                    if(b[12]){
                         String name = "eng_10.txt";//параметр для нового activity
                         Intent intent = new Intent(GameLevels.this, Level1.class);
                         intent.putExtra("name",name);//передаем нужный параметр
                         intent.putExtra("counter",counter);//передаем нужный параметр
+                        intent.putExtra("b",b);
                         startActivity(intent);
                         finish();
                     }
@@ -338,11 +349,12 @@ public class GameLevels extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    if(b14){
+                    if(b[13]){
                         String name = "eng_20.txt";//параметр для нового activity
                         Intent intent = new Intent(GameLevels.this, Level1.class);
                         intent.putExtra("name",name);//передаем нужный параметр
                         intent.putExtra("counter",counter);//передаем нужный параметр
+                        intent.putExtra("b",b);
                         startActivity(intent);
                         finish();
                     }
@@ -360,11 +372,12 @@ public class GameLevels extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    if(b15){
+                    if(b[14]){
                         String name = "eng_30.txt";//параметр для нового activity
                         Intent intent = new Intent(GameLevels.this, Level1.class);
                         intent.putExtra("name",name);//передаем нужный параметр
                         intent.putExtra("counter",counter);//передаем нужный параметр
+                        intent.putExtra("b",b);
                         startActivity(intent);
                         finish();
                     }
@@ -381,11 +394,12 @@ public class GameLevels extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    if(b16){
+                    if(b[15]){
                         String name = "eng_40.txt";//параметр для нового activity
                         Intent intent = new Intent(GameLevels.this, Level1.class);
                         intent.putExtra("name",name);//передаем нужный параметр
                         intent.putExtra("counter",counter);//передаем нужный параметр
+                        intent.putExtra("b",b);
                         startActivity(intent);
                         finish();
                     }

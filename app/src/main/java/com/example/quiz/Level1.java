@@ -72,21 +72,26 @@ public class Level1 extends AppCompatActivity {
                     Intent intent = getIntent();//переданный параметр из другой activity счётчик
                     int counter = intent.getIntExtra("counter",0);//полученные данные счётчика
                     String new_name = intent.getStringExtra("name");//полученные данные имени файла
+                    boolean[] b = intent.getBooleanArrayExtra("b");//массив для управления ограничением кнопок
+                    b[checkButtonNumber(new_name)]=false;//закрытие доступа к кнопке
+                    System.out.println(checkButtonNumber(new_name));
                     //является ли ответ правильным?
                     if(Objects.equals(answer, a1)){
                         answ1.setText("right");
                         counter=counter+getPoints(new_name);//увеличение баллов на нужную величину
                         Intent intent2 = new Intent(Level1.this, GameLevels.class);
-                        intent2.putExtra("counter",counter);//передаем счётчик дальше
+                        intent2.putExtra("counter",counter);//передаём счётчик дальше
                         intent2.putExtra("new_name",new_name);//передаём имя файла дальше
+                        intent2.putExtra("b",b);//передаём массив для управления кнопками дальше
                         startActivity(intent2);
                         finish();
                     }
                     else{
                         answ1.setText("false");
                         Intent intent2 = new Intent(Level1.this, GameLevels.class);
-                        intent2.putExtra("counter",counter);//передаем счётчик дальше
+                        intent2.putExtra("counter",counter);//передаём счётчик дальше
                         intent2.putExtra("new_name",new_name);//передаём имя файла дальше
+                        intent2.putExtra("b",b);//передаём массив для управления кнопками дальше
                         startActivity(intent2);
                         finish();
                     }
@@ -101,23 +106,27 @@ public class Level1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = getIntent();//переданный параметр из другой activity счётчик
+                    Intent intent = getIntent();//переданный параметр из другой activity
                     int counter = intent.getIntExtra("counter",0);//полученные данные
                     String new_name = intent.getStringExtra("name");//полученные данные
+                    boolean[] b = intent.getBooleanArrayExtra("b");//массив для управления ограничением кнопок
+                    b[checkButtonNumber(new_name)]=false;//закрытие доступа к кнопке
                     if(Objects.equals(answer, a2)){
                         counter=counter+getPoints(new_name);
                         answ2.setText("right");
                         Intent intent2 = new Intent(Level1.this, GameLevels.class);
-                        intent2.putExtra("counter",counter);//передаем нужный параметр
-                        intent2.putExtra("new_name",new_name);//test
+                        intent2.putExtra("counter",counter);//передаём счётчик дальше
+                        intent2.putExtra("new_name",new_name);//передаём имя файла дальше
+                        intent2.putExtra("b",b);//передаём массив для управления кнопками дальше
                         startActivity(intent2);
                         finish();
                     }
                     else{
                         answ2.setText("false");
                         Intent intent2 = new Intent(Level1.this, GameLevels.class);
-                        intent2.putExtra("counter",counter);//передаем нужный параметр
-                        intent2.putExtra("new_name",new_name);//test
+                        intent2.putExtra("counter",counter);//передаём счётчик дальше
+                        intent2.putExtra("new_name",new_name);//передаём имя файла дальше
+                        intent2.putExtra("b",b);//передаём массив для управления кнопками дальше
                         startActivity(intent2);
                         finish();
                     }
@@ -135,20 +144,24 @@ public class Level1 extends AppCompatActivity {
                     Intent intent = getIntent();//переданный параметр из другой activity счётчик
                     int counter = intent.getIntExtra("counter",0);//полученные данные
                     String new_name = intent.getStringExtra("name");//полученные данные
+                    boolean[] b = intent.getBooleanArrayExtra("b");//массив для управления ограничением кнопок
+                    b[checkButtonNumber(new_name)]=false;//закрытие доступа к кнопке
                     if(Objects.equals(answer, a3)){
                         counter=counter+getPoints(new_name);
                         answ3.setText("right");
                         Intent intent2 = new Intent(Level1.this, GameLevels.class);
-                        intent2.putExtra("counter",counter);//передаем нужный параметр
-                        intent2.putExtra("new_name",new_name);//test
+                        intent2.putExtra("counter",counter);//передаём счётчик дальше
+                        intent2.putExtra("new_name",new_name);//передаём имя файла дальше
+                        intent2.putExtra("b",b);//передаём массив для управления кнопками дальше
                         startActivity(intent2);
                         finish();
                     }
                     else{
                         answ3.setText("false");
                         Intent intent2 = new Intent(Level1.this, GameLevels.class);
-                        intent2.putExtra("counter",counter);//передаем нужный параметр
-                        intent2.putExtra("new_name",new_name);//test
+                        intent2.putExtra("counter",counter);//передаём счётчик дальше
+                        intent2.putExtra("new_name",new_name);//передаём имя файла дальше
+                        intent2.putExtra("b",b);//передаём массив для управления кнопками дальше
                         startActivity(intent2);
                         finish();
                     }
@@ -160,6 +173,26 @@ public class Level1 extends AppCompatActivity {
 
 
     }
+
+    //какая кнопка была нажата (возвращает номер кнопки)
+    public int checkButtonNumber(String name){
+        String n="";int number=0;
+        switch (name.substring(0, 3)){
+            case "rus": number=0; n = name.substring(4,6);break;
+            case "mat": number=4;n = name.substring(5,7);break;
+            case "inf": number=8;n = name.substring(4,6);break;
+            case "eng": number=12;n = name.substring(4,6);break;
+        }
+
+        switch (n){
+            case "10": number+=0;break;
+            case "20": number+=1;break;
+            case "30": number+=2;break;
+            case "40": number+=3;break;
+        }
+        return number;
+    }
+
     //Системная кнопка "Назад" - список вопросов
     // Возвращение на экран с вопросами по нажатию системной кнопки "Назад"
     @Override

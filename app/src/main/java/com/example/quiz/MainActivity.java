@@ -14,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
 
     private long backPressedTime;
     private Toast backToast;
+    private boolean[] b= new boolean[16];
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,14 +29,19 @@ public class MainActivity extends AppCompatActivity {
                 // Команда для кнопки "Назад"
                 try{
                     Intent intent = new Intent(MainActivity.this, GameLevels.class);
-                    startActivity(intent);finish();
+                    intent.putExtra("b",b);
+                    startActivity(intent);
+                    finish();
                 }catch (Exception e) {
 
                 }
             }
         });
 
-
+        //инициализация массива дя кнопок
+        for (int i=0; i<16; i++){
+            b[i]=true;
+        }
 
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
