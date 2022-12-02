@@ -74,7 +74,7 @@ public class GameLevels extends AppCompatActivity {
         for(int i = 0;i < 16; i++){
             Resources res = getResources();
             if(!b[i]){
-                t[i].setBackground(ResourcesCompat.getDrawable(res, R.drawable.style_btn_stroke_black_press_gray, null));
+                t[i].setBackground(ResourcesCompat.getDrawable(res, R.drawable.style_button_press_choise_gray, null));
                 t[i].setTextColor(R.color.brown_text_gray);
             }
         }

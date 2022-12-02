@@ -85,7 +85,7 @@ public class Level1 extends AppCompatActivity {
                     System.out.println(checkButtonNumber(new_name));
                     //является ли ответ правильным?
                     if(Objects.equals(answer, a1)){
-                        answ1.setText("right");
+                        //answ1.setText("right");
                         counter=counter+getPoints(new_name);//увеличение баллов на нужную величину
                         Intent intent2 = new Intent(Level1.this, GameLevels.class);
                         intent2.putExtra("counter",counter);//передаём счётчик дальше
@@ -95,7 +95,7 @@ public class Level1 extends AppCompatActivity {
                         finish();
                     }
                     else{
-                        answ1.setText("false");
+                        //answ1.setText("false");
                         Intent intent2 = new Intent(Level1.this, GameLevels.class);
                         intent2.putExtra("counter",counter);//передаём счётчик дальше
                         intent2.putExtra("new_name",new_name);//передаём имя файла дальше
@@ -121,7 +121,7 @@ public class Level1 extends AppCompatActivity {
                     b[checkButtonNumber(new_name)]=false;//закрытие доступа к кнопке
                     if(Objects.equals(answer, a2)){
                         counter=counter+getPoints(new_name);
-                        answ2.setText("right");
+                        //answ2.setText("right");
                         Intent intent2 = new Intent(Level1.this, GameLevels.class);
                         intent2.putExtra("counter",counter);//передаём счётчик дальше
                         intent2.putExtra("new_name",new_name);//передаём имя файла дальше
@@ -130,7 +130,7 @@ public class Level1 extends AppCompatActivity {
                         finish();
                     }
                     else{
-                        answ2.setText("false");
+                        //answ2.setText("false");
                         Intent intent2 = new Intent(Level1.this, GameLevels.class);
                         intent2.putExtra("counter",counter);//передаём счётчик дальше
                         intent2.putExtra("new_name",new_name);//передаём имя файла дальше
@@ -156,7 +156,7 @@ public class Level1 extends AppCompatActivity {
                     b[checkButtonNumber(new_name)]=false;//закрытие доступа к кнопке
                     if(Objects.equals(answer, a3)){
                         counter=counter+getPoints(new_name);
-                        answ3.setText("right");
+                        //answ3.setText("right");
                         Intent intent2 = new Intent(Level1.this, GameLevels.class);
                         intent2.putExtra("counter",counter);//передаём счётчик дальше
                         intent2.putExtra("new_name",new_name);//передаём имя файла дальше
@@ -165,7 +165,7 @@ public class Level1 extends AppCompatActivity {
                         finish();
                     }
                     else{
-                        answ3.setText("false");
+                        //answ3.setText("false");
                         Intent intent2 = new Intent(Level1.this, GameLevels.class);
                         intent2.putExtra("counter",counter);//передаём счётчик дальше
                         intent2.putExtra("new_name",new_name);//передаём имя файла дальше
