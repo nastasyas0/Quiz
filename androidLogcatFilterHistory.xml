@@ -1,10 +1,10 @@
 <application>
   <component name="AndroidLogcatFilterHistory">
-    <option name="mostRecentlyUsed" value="tag:com.example.rmp1.MainActivity " />
+    <option name="mostRecentlyUsed" value="tag:com.example.rmp1.DisplayMessageActivity " />
     <option name="nonFavorites">
       <list>
-        <option value="tag:com.example.rmp1.MainActivity " />
         <option value="tag:com.example.rmp1.DisplayMessageActivity " />
+        <option value="tag:com.example.rmp1.MainActivity " />
         <option value="package:rmp" />
         <option value="rmp1.debug" />
         <option value="rmp1" />
