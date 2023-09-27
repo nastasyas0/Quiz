@@ -1,11 +1,15 @@
 <application>
   <component name="AndroidLogcatFilterHistory">
-    <option name="mostRecentlyUsed" value="package:mine TAG:user" />
+    <option name="mostRecentlyUsed" value="package:mine" />
     <option name="nonFavorites">
       <list>
+        <option value="package:mine" />
+        <option value="package:mine d" />
+        <option value="package:mine TAG" />
+        <option value="package:mine level:info " />
+        <option value="package:mine " />
         <option value="package:mine TAG:user" />
         <option value="email" />
-        <option value="package:mine " />
         <option value="tag:com.example.rmp1.DisplayMessageActivity " />
         <option value="tag:com.example.rmp1.MainActivity " />
         <option value="package:rmp" />
