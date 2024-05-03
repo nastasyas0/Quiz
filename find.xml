@@ -1,8 +1,8 @@
 <application>
   <component name="FindSettings">
-    <option name="customScope" value="Project 'secondApp'" />
-    <option name="defaultScopeName" value="Project 'secondApp'" />
-    <option name="SEARCH_SCOPE" value="Project 'secondApp'" />
+    <option name="customScope" value="Project 'kotlin_compose_design'" />
+    <option name="defaultScopeName" value="Project 'kotlin_compose_design'" />
+    <option name="SEARCH_SCOPE" value="Project 'kotlin_compose_design'" />
     <mask>*.css</mask>
     <mask>*.html</mask>
     <mask>*.xml</mask>
