@@ -4,8 +4,8 @@
     <option name="nonFavorites">
       <list>
         <option value="data" />
-        <option value="date" />
         <option value="level:error " />
+        <option value="date" />
         <option value="LEVEL:ERROR " />
         <option value="package:mine " />
         <option value="package:mine TAG data" />
