@@ -4,9 +4,9 @@
     <option name="nonFavorites">
       <list>
         <option value="product" />
+        <option value="date" />
         <option value="data" />
         <option value="level:error " />
-        <option value="date" />
         <option value="LEVEL:ERROR " />
         <option value="package:mine " />
         <option value="package:mine TAG data" />
