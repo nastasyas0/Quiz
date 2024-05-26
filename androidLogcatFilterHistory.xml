@@ -1,10 +1,11 @@
 <application>
   <component name="AndroidLogcatFilterHistory">
-    <option name="mostRecentlyUsed" value="start" />
+    <option name="mostRecentlyUsed" value="" />
     <option name="nonFavorites">
       <list>
-        <option value="start" />
         <option value="product" />
+        <option value="error " />
+        <option value="start" />
         <option value="date" />
         <option value="data" />
         <option value="level:error " />
@@ -22,7 +23,6 @@
         <option value="package:rmp" />
         <option value="rmp1.debug" />
         <option value="rmp1" />
-        <option value="level:debug " />
       </list>
     </option>
   </component>
