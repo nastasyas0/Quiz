@@ -1,8 +1,9 @@
 <application>
   <component name="AndroidLogcatFilterHistory">
-    <option name="mostRecentlyUsed" value="test_" />
+    <option name="mostRecentlyUsed" value="" />
     <option name="nonFavorites">
       <list>
+        <option value="teeee" />
         <option value="test_" />
         <option value="package:mine TAG test_connect" />
         <option value="=allf" />
@@ -22,7 +23,6 @@
         <option value="package:mine level:info " />
         <option value="package:mine TAG:user" />
         <option value="email" />
-        <option value="tag:com.example.rmp1.DisplayMessageActivity " />
       </list>
     </option>
   </component>
