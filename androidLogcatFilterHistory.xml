@@ -1,11 +1,13 @@
 <application>
   <component name="AndroidLogcatFilterHistory">
-    <option name="mostRecentlyUsed" value="tee" />
+    <option name="mostRecentlyUsed" value="" />
     <option name="nonFavorites">
       <list>
-        <option value="tee" />
-        <option value="sea" />
+        <option value="test" />
         <option value="get" />
+        <option value="sea" />
+        <option value="te" />
+        <option value="tee" />
         <option value="hello" />
         <option value="TAG=:test" />
         <option value="TAG=:hello" />
@@ -21,8 +23,6 @@
         <option value="date" />
         <option value="data" />
         <option value="LEVEL:ERROR " />
-        <option value="package:mine " />
-        <option value="package:mine TAG data" />
       </list>
     </option>
   </component>
