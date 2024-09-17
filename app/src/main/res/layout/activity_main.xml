@@ -5,7 +5,7 @@
     android:id="@+id/main_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bac_base"
+    android:background="@drawable/back_results"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -23,13 +23,12 @@
             android:id="@+id/buttonStart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:background="@drawable/style_btn_stroke_black"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
             android:text="@string/quiz"
             android:textColor="@color/brown"
-            android:textSize="40sp" />
+            android:textSize="42sp" />
 
     </LinearLayout>
 
@@ -47,13 +46,12 @@
             android:id="@+id/buttonResult"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:background="@drawable/style_btn_stroke_black"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             android:text="@string/result"
             android:textColor="@color/brown"
-            android:textSize="40sp" />
+            android:textSize="41sp" />
     </LinearLayout>
 
 

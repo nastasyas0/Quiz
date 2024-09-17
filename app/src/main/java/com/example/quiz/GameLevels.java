@@ -1,17 +1,33 @@
 package com.example.quiz;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.TextureView;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
+
+import java.lang.reflect.Array;
 
 public class GameLevels extends AppCompatActivity {
     int counter = 0;//общий счётчик правильных ответов
+    private TextView[] t = new TextView[16];
+
+    private long backPressedTime;
+    private Toast backToast;
+
+    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,11 +45,39 @@ public class GameLevels extends AppCompatActivity {
                     Intent intent = new Intent(GameLevels.this, MainActivity.class);
                     startActivity(intent);finish();
                 }catch (Exception e) {
-                    //System.out.println("error");
+
                 }
             }
         });
 
+        Intent intent0 = getIntent();//переданный параметр из другой activity
+        boolean[] b = intent0.getBooleanArrayExtra("b");//массив для управления ограничением кнопок
+
+        t[0] = findViewById(R.id.textView1);
+        t[1] = findViewById(R.id.textView2);
+        t[2] = findViewById(R.id.textView3);
+        t[3] = findViewById(R.id.textView4);
+        t[4] = findViewById(R.id.textView5);
+        t[5] = findViewById(R.id.textView6);
+        t[6] = findViewById(R.id.textView7);
+        t[7] = findViewById(R.id.textView8);
+        t[8] = findViewById(R.id.textView9);
+        t[9] = findViewById(R.id.textView10);
+        t[10] = findViewById(R.id.textView11);
+        t[11] = findViewById(R.id.textView12);
+        t[12] = findViewById(R.id.textView13);
+        t[13] = findViewById(R.id.textView14);
+        t[14] = findViewById(R.id.textView15);
+        t[15] = findViewById(R.id.textView16);
+
+        // Меняем цвет кнопки после ответа на вопрос
+        for(int i = 0;i < 16; i++){
+            Resources res = getResources();
+            if(!b[i]){
+                t[i].setBackground(ResourcesCompat.getDrawable(res, R.drawable.style_button_press_choise_gray, null));
+                t[i].setTextColor(R.color.brown_text_gray);
+            }
+        }
 
         // Кнопка для перехода на 1 уровень викторины - начало
         TextView textView1 = (TextView)findViewById(R.id.textView1);
@@ -41,66 +85,85 @@ public class GameLevels extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    String name = "rus_10.txt";//параметр для нового activity
-                    Intent intent = new Intent(GameLevels.this, Level1.class);
-                    intent.putExtra("name",name);//передаем нужный параметр
-                    intent.putExtra("counter",counter);//передаем нужный параметр
-                    startActivity(intent);
-                    finish();
+                    if(b[0]){
+                        String name = "rus_10.txt";//параметр для нового activity
+                        Intent intent = new Intent(GameLevels.this, Level1.class);
+                        intent.putExtra("name",name);//передаем нужный параметр
+                        intent.putExtra("counter",counter);//передаем нужный параметр
+                        intent.putExtra("b",b);
+                        startActivity(intent);
+                        finish();
+                    }
+                    else getMessage();
                 } catch(Exception e) {
 
                 }
             }
         });
-        // Кнопка для перехода на 2 уровень викторины - конец
+        // Кнопка для перехода на 1 уровень викторины - конец
+
         // Кнопка для перехода на 2 уровень викторины - начало
         TextView textView2 = (TextView)findViewById(R.id.textView2);
         textView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    String name = "rus_20.txt";//параметр для нового activity
-                    Intent intent = new Intent(GameLevels.this, Level1.class);
-                    intent.putExtra("name",name);//передаем нужный параметр
-                    intent.putExtra("counter",counter);//передаем нужный параметр
-                    startActivity(intent);
-                    finish();
+                    if(b[1]){
+                        String name = "rus_20.txt";//параметр для нового activity
+                        Intent intent = new Intent(GameLevels.this, Level1.class);
+                        intent.putExtra("name",name);//передаем нужный параметр
+                        intent.putExtra("counter",counter);//передаем нужный параметр
+                        intent.putExtra("b",b);
+                        startActivity(intent);
+                        finish();
+                    }
+                    else getMessage();
                 } catch(Exception e) {
 
                 }
             }
         });
         // Кнопка для перехода на 2 уровень викторины - конец
+
         // Кнопка для перехода на 3 уровень викторины - начало
         TextView textView3 = (TextView)findViewById(R.id.textView3);
         textView3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    String name = "rus_30.txt";//параметр для нового activity
-                    Intent intent = new Intent(GameLevels.this, Level1.class);
-                    intent.putExtra("name",name);//передаем нужный параметр
-                    intent.putExtra("counter",counter);//передаем нужный параметр
-                    startActivity(intent);
-                    finish();
+                    if(b[2]){
+                        String name = "rus_30.txt";//параметр для нового activity
+                        Intent intent = new Intent(GameLevels.this, Level1.class);
+                        intent.putExtra("name",name);//передаем нужный параметр
+                        intent.putExtra("counter",counter);//передаем нужный параметр
+                        intent.putExtra("b",b);
+                        startActivity(intent);
+                        finish();
+                    }
+                    else getMessage();
                 } catch(Exception e) {
 
                 }
             }
         });
         // Кнопка для перехода на 3 уровень викторины - конец
+
         // Кнопка для перехода на 4 уровень викторины - начало
         TextView textView4 = (TextView)findViewById(R.id.textView4);
         textView4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    String name = "rus_40.txt";//параметр для нового activity
-                    Intent intent = new Intent(GameLevels.this, Level1.class);
-                    intent.putExtra("name",name);//передаем нужный параметр
-                    intent.putExtra("counter",counter);//передаем нужный параметр
-                    startActivity(intent);
-                    finish();
+                    if(b[3]){
+                        String name = "rus_40.txt";//параметр для нового activity
+                        Intent intent = new Intent(GameLevels.this, Level1.class);
+                        intent.putExtra("name",name);//передаем нужный параметр
+                        intent.putExtra("counter",counter);//передаем нужный параметр
+                        intent.putExtra("b",b);
+                        startActivity(intent);
+                        finish();
+                    }
+                    else getMessage();
                 } catch(Exception e) {
 
                 }
@@ -108,19 +171,23 @@ public class GameLevels extends AppCompatActivity {
         });
         // Кнопка для перехода на 4 уровень викторины - конец
 
-        //новый предмет математика
+        // новый предмет математика
         // Кнопка для перехода на 5 уровень викторины - начало
         TextView textView5 = (TextView)findViewById(R.id.textView5);
         textView5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    String name = "math_10.txt";//параметр для нового activity
-                    Intent intent = new Intent(GameLevels.this, Level1.class);
-                    intent.putExtra("name",name);//передаем нужный параметр
-                    intent.putExtra("counter",counter);//передаем нужный параметр
-                    startActivity(intent);
-                    finish();
+                    if(b[4]){
+                        String name = "math_10.txt";//параметр для нового activity
+                        Intent intent = new Intent(GameLevels.this, Level1.class);
+                        intent.putExtra("name",name);//передаем нужный параметр
+                        intent.putExtra("counter",counter);//передаем нужный параметр
+                        intent.putExtra("b",b);
+                        startActivity(intent);
+                        finish();
+                    }
+                    else getMessage();
                 } catch(Exception e) {
 
                 }
@@ -134,12 +201,16 @@ public class GameLevels extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    String name = "math_20.txt";//параметр для нового activity
-                    Intent intent = new Intent(GameLevels.this, Level1.class);
-                    intent.putExtra("name",name);//передаем нужный параметр
-                    intent.putExtra("counter",counter);//передаем нужный параметр
-                    startActivity(intent);
-                    finish();
+                    if(b[5]){
+                        String name = "math_20.txt";//параметр для нового activity
+                        Intent intent = new Intent(GameLevels.this, Level1.class);
+                        intent.putExtra("name",name);//передаем нужный параметр
+                        intent.putExtra("counter",counter);//передаем нужный параметр
+                        intent.putExtra("b",b);
+                        startActivity(intent);
+                        finish();
+                    }
+                    else getMessage();
                 } catch(Exception e) {
 
                 }
@@ -153,12 +224,16 @@ public class GameLevels extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    String name = "math_30.txt";//параметр для нового activity
-                    Intent intent = new Intent(GameLevels.this, Level1.class);
-                    intent.putExtra("name",name);//передаем нужный параметр
-                    intent.putExtra("counter",counter);//передаем нужный параметр
-                    startActivity(intent);
-                    finish();
+                    if(b[6]){
+                        String name = "math_30.txt";//параметр для нового activity
+                        Intent intent = new Intent(GameLevels.this, Level1.class);
+                        intent.putExtra("name",name);//передаем нужный параметр
+                        intent.putExtra("counter",counter);//передаем нужный параметр
+                        intent.putExtra("b",b);
+                        startActivity(intent);
+                        finish();
+                    }
+                    else getMessage();
                 } catch(Exception e) {
 
                 }
@@ -172,123 +247,156 @@ public class GameLevels extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    String name = "math_40.txt";//параметр для нового activity
-                    Intent intent = new Intent(GameLevels.this, Level1.class);
-                    intent.putExtra("name",name);//передаем нужный параметр
-                    intent.putExtra("counter",counter);//передаем нужный параметр
-                    startActivity(intent);
-                    finish();
+                    if (b[7]) {
+                        String name = "math_40.txt";//параметр для нового activity
+                        Intent intent = new Intent(GameLevels.this, Level1.class);
+                        intent.putExtra("name",name);//передаем нужный параметр
+                        intent.putExtra("counter",counter);//передаем нужный параметр
+                        intent.putExtra("b",b);
+                        startActivity(intent);
+                        finish();
+                    }
+                    else getMessage();
                 } catch(Exception e) {
 
                 }
             }
         });
         // Кнопка для перехода на 8 уровень викторины - конец
-        //новый предмет информатика
 
+        //новый предмет информатика
         // Кнопка для перехода на 9 уровень викторины - начало
         TextView textView9 = (TextView)findViewById(R.id.textView9);
         textView9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    String name = "inf_10.txt";//параметр для нового activity
-                    Intent intent = new Intent(GameLevels.this, Level1.class);
-                    intent.putExtra("name",name);//передаем нужный параметр
-                    intent.putExtra("counter",counter);//передаем нужный параметр
-                    startActivity(intent);
-                    finish();
+                    if(b[8]){
+                        String name = "inf_10.txt";//параметр для нового activity
+                        Intent intent = new Intent(GameLevels.this, Level1.class);
+                        intent.putExtra("name",name);//передаем нужный параметр
+                        intent.putExtra("counter",counter);//передаем нужный параметр
+                        intent.putExtra("b",b);
+                        startActivity(intent);
+                        finish();
+                    }
+                    else getMessage();
                 } catch(Exception e) {
 
                 }
             }
         });
         // Кнопка для перехода на 9 уровень викторины - конец
+
         // Кнопка для перехода на 10 уровень викторины - начало
         TextView textView10 = (TextView)findViewById(R.id.textView10);
         textView10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    String name = "inf_20.txt";//параметр для нового activity
-                    Intent intent = new Intent(GameLevels.this, Level1.class);
-                    intent.putExtra("name",name);//передаем нужный параметр
-                    intent.putExtra("counter",counter);//передаем нужный параметр
-                    startActivity(intent);
-                    finish();
+                    if(b[9]){
+                        String name = "inf_20.txt";//параметр для нового activity
+                        Intent intent = new Intent(GameLevels.this, Level1.class);
+                        intent.putExtra("name",name);//передаем нужный параметр
+                        intent.putExtra("counter",counter);//передаем нужный параметр
+                        intent.putExtra("b",b);
+                        startActivity(intent);
+                        finish();
+                    }
+                    else getMessage();
                 } catch(Exception e) {
 
                 }
             }
         });
         // Кнопка для перехода на 10 уровень викторины - конец
+
         // Кнопка для перехода на 11 уровень викторины - начало
         TextView textView11 = (TextView)findViewById(R.id.textView11);
         textView11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    String name = "inf_30.txt";//параметр для нового activity
-                    Intent intent = new Intent(GameLevels.this, Level1.class);
-                    intent.putExtra("name",name);//передаем нужный параметр
-                    intent.putExtra("counter",counter);//передаем нужный параметр
-                    startActivity(intent);
-                    finish();
+                    if(b[10]){
+                        String name = "inf_30.txt";//параметр для нового activity
+                        Intent intent = new Intent(GameLevels.this, Level1.class);
+                        intent.putExtra("name",name);//передаем нужный параметр
+                        intent.putExtra("counter",counter);//передаем нужный параметр
+                        intent.putExtra("b",b);
+                        startActivity(intent);
+                        finish();
+                    }
+                    else getMessage();
                 } catch(Exception e) {
 
                 }
             }
         });
         // Кнопка для перехода на 11 уровень викторины - конец
+
         // Кнопка для перехода на 12 уровень викторины - начало
         TextView textView12 = (TextView)findViewById(R.id.textView12);
         textView12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    String name = "inf_40.txt";//параметр для нового activity
-                    Intent intent = new Intent(GameLevels.this, Level1.class);
-                    intent.putExtra("name",name);//передаем нужный параметр
-                    intent.putExtra("counter",counter);//передаем нужный параметр
-                    startActivity(intent);
-                    finish();
+                    if(b[11]){
+                        String name = "inf_40.txt";//параметр для нового activity
+                        Intent intent = new Intent(GameLevels.this, Level1.class);
+                        intent.putExtra("name",name);//передаем нужный параметр
+                        intent.putExtra("counter",counter);//передаем нужный параметр
+                        intent.putExtra("b",b);
+                        startActivity(intent);
+                        finish();
+                    }
+                    else getMessage();
                 } catch(Exception e) {
 
                 }
             }
         });
         // Кнопка для перехода на 12 уровень викторины - конец
-        //новый предмет английский
+
+        // новый предмет английский
         // Кнопка для перехода на 13 уровень викторины - начало
         TextView textView13 = (TextView)findViewById(R.id.textView13);
         textView13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    String name = "eng_10.txt";//параметр для нового activity
-                    Intent intent = new Intent(GameLevels.this, Level1.class);
-                    intent.putExtra("name",name);//передаем нужный параметр
-                    intent.putExtra("counter",counter);//передаем нужный параметр
-                    startActivity(intent);
-                    finish();
+                    if(b[12]){
+                        String name = "eng_10.txt";//параметр для нового activity
+                        Intent intent = new Intent(GameLevels.this, Level1.class);
+                        intent.putExtra("name",name);//передаем нужный параметр
+                        intent.putExtra("counter",counter);//передаем нужный параметр
+                        intent.putExtra("b",b);
+                        startActivity(intent);
+                        finish();
+                    }
+                    else getMessage();
                 } catch(Exception e) {
 
                 }
             }
         });
         // Кнопка для перехода на 13 уровень викторины - конец
+
         // Кнопка для перехода на 14 уровень викторины - начало
         TextView textView14 = (TextView)findViewById(R.id.textView14);
         textView14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    String name = "eng_20.txt";//параметр для нового activity
-                    Intent intent = new Intent(GameLevels.this, Level1.class);
-                    intent.putExtra("name",name);//передаем нужный параметр
-                    intent.putExtra("counter",counter);//передаем нужный параметр
-                    startActivity(intent);
-                    finish();
+                    if(b[13]){
+                        String name = "eng_20.txt";//параметр для нового activity
+                        Intent intent = new Intent(GameLevels.this, Level1.class);
+                        intent.putExtra("name",name);//передаем нужный параметр
+                        intent.putExtra("counter",counter);//передаем нужный параметр
+                        intent.putExtra("b",b);
+                        startActivity(intent);
+                        finish();
+                    }
+                    else getMessage();
                 } catch(Exception e) {
 
                 }
@@ -302,42 +410,70 @@ public class GameLevels extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    String name = "eng_30.txt";//параметр для нового activity
-                    Intent intent = new Intent(GameLevels.this, Level1.class);
-                    intent.putExtra("name",name);//передаем нужный параметр
-                    intent.putExtra("counter",counter);//передаем нужный параметр
-                    startActivity(intent);
-                    finish();
+                    if(b[14]){
+                        String name = "eng_30.txt";//параметр для нового activity
+                        Intent intent = new Intent(GameLevels.this, Level1.class);
+                        intent.putExtra("name",name);//передаем нужный параметр
+                        intent.putExtra("counter",counter);//передаем нужный параметр
+                        intent.putExtra("b",b);
+                        startActivity(intent);
+                        finish();
+                    }
+                    else getMessage();
                 } catch(Exception e) {
 
                 }
             }
         });
         // Кнопка для перехода на 15 уровень викторины - конец
+
         // Кнопка для перехода на 16 уровень викторины - начало
         TextView textView16 = (TextView)findViewById(R.id.textView16);
         textView16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    String name = "eng_40.txt";//параметр для нового activity
-                    Intent intent = new Intent(GameLevels.this, Level1.class);
-                    intent.putExtra("name",name);//передаем нужный параметр
-                    intent.putExtra("counter",counter);//передаем нужный параметр
-                    startActivity(intent);
-                    finish();
+                    if(b[15]){
+                        String name = "eng_40.txt";//параметр для нового activity
+                        Intent intent = new Intent(GameLevels.this, Level1.class);
+                        intent.putExtra("name",name);//передаем нужный параметр
+                        intent.putExtra("counter",counter);//передаем нужный параметр
+                        intent.putExtra("b",b);
+                        startActivity(intent);
+                        finish();
+                    }
+                    else getMessage();
                 } catch(Exception e) {
 
                 }
             }
         });
         // Кнопка для перехода на 16 уровень викторины - конец
+
+        // Кнопка для завершения викторины - начало
+        Button button_finish_game = (Button)findViewById(R.id.button_finish_game);
+        button_finish_game.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent intent = new Intent(GameLevels.this, Results.class);
+                    intent.putExtra("counter",counter);
+                    startActivity(intent);finish();
+                } catch(Exception e) {
+
+                }
+            }
+        });
+        // Кнопка для завершения викторины - конец
         getCounter();
     }
+
     public void getCounter(){
         Intent intent1 = getIntent();//переданный параметр из другой activity счётчик правильных ответов
         counter = intent1.getIntExtra("counter",0);
+        String new_name = intent1.getStringExtra("new_name");
     }
+
     // Системная кнопка "Назад" - начало
     // Возвращение на главный экран по нажатию системной кнопки "Назад"
     @Override
@@ -350,4 +486,10 @@ public class GameLevels extends AppCompatActivity {
         }
     }
     // Системная кнопка "Назад" - конец
+
+    public void getMessage(){
+        backToast = Toast.makeText(getBaseContext(), "Ставки сделаны, ставок больше нет", Toast.LENGTH_SHORT);
+        backToast.show();
+        backPressedTime = System.currentTimeMillis();
+    }
 }
